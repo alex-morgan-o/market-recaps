@@ -46,14 +46,22 @@
         .metric {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 8px 0;
             border-bottom: 1px solid #eee;
+            gap: 10px;
         }
         .metric:last-child {
             border-bottom: none;
         }
         .metric-name {
             font-weight: 500;
+            flex: 1;
+            min-width: 0;
+        }
+        .metric-value {
+            text-align: right;
+            white-space: nowrap;
         }
         .positive {
             color: #10b981;
@@ -140,6 +148,18 @@
                 font-size: 0.95em;
                 padding: 12px;
             }
+            /* Make metrics more compact on mobile */
+            .metric {
+                font-size: 0.9em;
+                padding: 10px 0;
+                gap: 8px;
+            }
+            .metric-name {
+                font-size: 0.95em;
+            }
+            .metric-value {
+                font-size: 0.9em;
+            }
             /* Make table responsive */
             table {
                 font-size: 0.85em;
@@ -217,19 +237,19 @@
             <h2>📈 Market Close</h2>
             <div class="metric">
                 <span class="metric-name">Dow Jones Industrial Average</span>
-                <span class="positive">49,501.31 (+260.31, +0.53%)</span>
+                <span class="metric-value positive">49,501.31 (+260.31, +0.53%)</span>
             </div>
             <div class="metric">
                 <span class="metric-name">S&P 500</span>
-                <span class="negative">6,971.81 (-0.84%)</span>
+                <span class="metric-value negative">6,971.81 (-0.84%)</span>
             </div>
             <div class="metric">
                 <span class="metric-name">NASDAQ Composite</span>
-                <span class="negative">23,255.19 (-1.43%)</span>
+                <span class="metric-value negative">23,255.19 (-1.43%)</span>
             </div>
             <div class="metric">
                 <span class="metric-name">S&P 500 Info Tech Sector</span>
-                <span class="negative">5,387.61 (-104.34, -1.90%)</span>
+                <span class="metric-value negative">5,387.61 (-104.34, -1.90%)</span>
             </div>
         </div>
 
@@ -426,16 +446,16 @@
                 <div class="card">
                     <h3 style="margin-top:0;">🟢 Best Performer</h3>
                     <div class="metric">
-                        <span>Energy (XLE)</span>
-                        <span class="positive">+3.3%</span>
+                        <span class="metric-name">Energy (XLE)</span>
+                        <span class="metric-value positive">+3.3%</span>
                     </div>
                     <p style="font-size: 0.9em; margin: 5px 0 0 0;">Benefitting from stronger crude and rotation into cash-flow cyclicals</p>
                 </div>
                 <div class="card">
                     <h3 style="margin-top:0;">🔴 Worst Performer</h3>
                     <div class="metric">
-                        <span>Technology (XLK)</span>
-                        <span class="negative">-2.2%</span>
+                        <span class="metric-name">Technology (XLK)</span>
+                        <span class="metric-value negative">-2.2%</span>
                     </div>
                     <p style="font-size: 0.9em; margin: 5px 0 0 0;">AI-capex and valuation worries hit semis, software, cloud</p>
                 </div>
@@ -443,12 +463,12 @@
             
             <h3>Other Major Moves</h3>
             <div class="metric">
-                <span>Communication Services (XLC)</span>
-                <span class="negative">-1.3%</span>
+                <span class="metric-name">Communication Services (XLC)</span>
+                <span class="metric-value negative">-1.3%</span>
             </div>
             <div class="metric">
-                <span>Health Care (XLV)</span>
-                <span class="negative">-1.0%</span>
+                <span class="metric-name">Health Care (XLV)</span>
+                <span class="metric-value negative">-1.0%</span>
             </div>
         </div>
 
