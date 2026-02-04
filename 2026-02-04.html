@@ -107,6 +107,7 @@
             width: 100%;
             border-collapse: collapse;
             margin: 15px 0;
+            font-size: 0.95em;
         }
         th, td {
             padding: 10px;
@@ -117,6 +118,81 @@
             background: #f8f9fa;
             font-weight: 600;
             color: #444;
+        }
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .summary {
+                font-size: 0.95em;
+                padding: 12px;
+            }
+            /* Make table responsive */
+            table {
+                font-size: 0.85em;
+            }
+            th, td {
+                padding: 6px 4px;
+            }
+            /* Hide table on mobile and show card layout instead */
+            .stock-table-desktop {
+                display: none;
+            }
+            .stock-cards-mobile {
+                display: block;
+            }
+        }
+        @media (min-width: 769px) {
+            .stock-table-desktop {
+                display: table;
+            }
+            .stock-cards-mobile {
+                display: none;
+            }
+        }
+        .stock-card {
+            background: #f8f9fa;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+        .stock-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .stock-card-ticker {
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+        .stock-card-company {
+            color: #6b7280;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        .stock-card-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .stock-card-price {
+            font-size: 1.1em;
+            font-weight: 600;
         }
         .disclaimer {
             background: #f3f4f6;
@@ -159,7 +235,9 @@
 
         <div class="section">
             <h2>💼 Notable Stock Moves</h2>
-            <table>
+            
+            <!-- Desktop Table View -->
+            <table class="stock-table-desktop">
                 <thead>
                     <tr>
                         <th>Ticker</th>
@@ -225,6 +303,117 @@
                     </tr>
                 </tbody>
             </table>
+
+            <!-- Mobile Card View -->
+            <div class="stock-cards-mobile">
+                <div class="stock-card">
+                    <div class="stock-card-header">
+                        <span class="stock-card-ticker">AMD</span>
+                        <span class="negative">-17.31%</span>
+                    </div>
+                    <div class="stock-card-company">Advanced Micro Devices</div>
+                    <div class="stock-card-details">
+                        <span class="stock-card-price">$200.19</span>
+                        <span class="negative">-$41.92</span>
+                    </div>
+                </div>
+
+                <div class="stock-card">
+                    <div class="stock-card-header">
+                        <span class="stock-card-ticker">OKLO</span>
+                        <span class="negative">-12.53%</span>
+                    </div>
+                    <div class="stock-card-company">Oklo Inc.</div>
+                    <div class="stock-card-details">
+                        <span class="stock-card-price">$68.23</span>
+                        <span class="negative">-$9.77</span>
+                    </div>
+                </div>
+
+                <div class="stock-card">
+                    <div class="stock-card-header">
+                        <span class="stock-card-ticker">TSLA</span>
+                        <span class="negative">-3.78%</span>
+                    </div>
+                    <div class="stock-card-company">Tesla, Inc.</div>
+                    <div class="stock-card-details">
+                        <span class="stock-card-price">$406.01</span>
+                        <span class="negative">-$15.95</span>
+                    </div>
+                </div>
+
+                <div class="stock-card">
+                    <div class="stock-card-header">
+                        <span class="stock-card-ticker">NVDA</span>
+                        <span class="negative">-3.41%</span>
+                    </div>
+                    <div class="stock-card-company">NVIDIA Corporation</div>
+                    <div class="stock-card-details">
+                        <span class="stock-card-price">$174.19</span>
+                        <span class="negative">-$6.15</span>
+                    </div>
+                </div>
+
+                <div class="stock-card">
+                    <div class="stock-card-header">
+                        <span class="stock-card-ticker">META</span>
+                        <span class="negative">-3.28%</span>
+                    </div>
+                    <div class="stock-card-company">Meta Platforms</div>
+                    <div class="stock-card-details">
+                        <span class="stock-card-price">$668.99</span>
+                        <span class="negative">-$22.71</span>
+                    </div>
+                </div>
+
+                <div class="stock-card">
+                    <div class="stock-card-header">
+                        <span class="stock-card-ticker">AMZN</span>
+                        <span class="negative">-2.36%</span>
+                    </div>
+                    <div class="stock-card-company">Amazon.com</div>
+                    <div class="stock-card-details">
+                        <span class="stock-card-price">$232.99</span>
+                        <span class="negative">-$5.63</span>
+                    </div>
+                </div>
+
+                <div class="stock-card">
+                    <div class="stock-card-header">
+                        <span class="stock-card-ticker">GOOG</span>
+                        <span class="negative">-2.16%</span>
+                    </div>
+                    <div class="stock-card-company">Alphabet Inc.</div>
+                    <div class="stock-card-details">
+                        <span class="stock-card-price">$333.34</span>
+                        <span class="negative">-$7.36</span>
+                    </div>
+                </div>
+
+                <div class="stock-card">
+                    <div class="stock-card-header">
+                        <span class="stock-card-ticker">AAPL</span>
+                        <span class="positive">+2.60%</span>
+                    </div>
+                    <div class="stock-card-company">Apple Inc.</div>
+                    <div class="stock-card-details">
+                        <span class="stock-card-price">$276.49</span>
+                        <span class="positive">+$7.01</span>
+                    </div>
+                </div>
+
+                <div class="stock-card">
+                    <div class="stock-card-header">
+                        <span class="stock-card-ticker">MSFT</span>
+                        <span class="positive">+0.72%</span>
+                    </div>
+                    <div class="stock-card-company">Microsoft Corporation</div>
+                    <div class="stock-card-details">
+                        <span class="stock-card-price">$414.19</span>
+                        <span class="positive">+$2.98</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="alert">
